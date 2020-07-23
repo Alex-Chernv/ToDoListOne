@@ -1,6 +1,6 @@
 # Todolistone 
 
-This is ToDO App.
+This is ToDo App.
 It is based on React.js (create-react-app/reacthooks/bootstrap)
 
 ## Installation 
