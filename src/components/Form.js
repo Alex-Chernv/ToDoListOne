@@ -8,7 +8,13 @@ export const Form = () => {
   const submitHandler = event => {
       event.preventDefault();
 
-      alert.show(value, 'success' )
+     if (value.trim()) {
+         //...
+         alert.show('Note was created', 'success');
+         setValue('')
+     } else {
+         alert.show('Enter name for notes')
+     }
   }
 
   return (
