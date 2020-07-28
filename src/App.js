@@ -8,22 +8,21 @@ import {AlertState} from './context/alert/AlertState.js';
 import {FirebaseState} from './context/firebase/FirebaseState.js';
 
 function App() {
-    return (
-      <FirebaseState>
-        <AlertState>
-          <BrowserRouter>
-            <Navbar/>
-            <div className="container pt-4">
-              <Alert/>
-              <Switch>
-                <Route path={'/'} exact component={Home}/>
-                <Route path={'/about'} component={About}/>
-              </Switch>
-            </div>
-          </BrowserRouter>
-        </AlertState>
-      </FirebaseState>
-
+  return (
+    <FirebaseState>
+      <AlertState>
+        <BrowserRouter>
+          <Navbar/>
+          <div className="container pt-4">
+            <Alert/>
+            <Switch>
+              <Route path={'/'} exact component={Home}/>
+              <Route path={'/about'} component={About}/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </AlertState>
+    </FirebaseState>
   );
 }
 
