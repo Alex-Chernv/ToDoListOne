@@ -4,7 +4,8 @@ import {FirebaseContext} from './FirebaseContext';
 import {firebaseReducer} from './FirebaseReducer';
 import {ADD_NOTE, FETCH_NOTES, REMOVE_NOTE, SHOW_LOADER} from '../types.js';
 
-const url = process.env.REACT_APP_DB_URL
+// const url = process.env.REACT_APP_DB_URL;
+const url = 'https://react-todolist-one-c1e94.firebaseio.com';
 
 export const FirebaseState = ({children}) => {
   const initialState = {
@@ -17,7 +18,9 @@ export const FirebaseState = ({children}) => {
 
   const fetchNotes = async () => {
     showLoader()
-    const res = await axios.get(`${url}/notes.json`)
+    const res = await axios.get(`${url}/notes.json`);
+    
+    if  (res.data === null) return;
 
     const payload = Object.keys(res.data).map(key => {
       return {
